@@ -1,6 +1,13 @@
 <?php
 
 include_once "header.php";
+include_once "form.php";
+include_once "database.php";
+
+
+
+$data = new Database()
+
 
 ?>
 
@@ -9,37 +16,25 @@ include_once "header.php";
         <a href="" class="heading text-light">TODO</a>
         <img src="images/icon-moon.svg" alt="sun" class="theme-icon text-light">
     </div>
-    <div class="form-group">
-        <input type="text" class="form-control" placeholder="Create a new todo">
-    </div>
+    <?php echo renderForm() ?>
+
+
 </header>
 
 <main class="container-fluid">
 
     <div class="todos">
-        <div class="card">
-            <div class="card-body d-flex  align-items-center">
-                <img src="images/icon-check.svg" alt="check" class="border border-dark rounded-circle">
-                <span class="ml-3">Buy a neccessary things for kitchen</span>
-                <img src="images/icon-cross.svg" alt="cross" class="ml-auto">
+        <!-- Display all todos -->
+        <?php foreach ($data->showData() as $todo) {
+            echo  "<div class='card'>
+            <div class='card-body d-flex  align-items-center'>
+                <img src='images/icon-check.svg' alt='check' class='border border-dark rounded-circle'>
+                <span class='ml-3'>$todo[title]</span>
+                <img src='images/icon-cross.svg' alt='cross' class='ml-auto'>
             </div>
-        </div>
+        </div>";
+        } ?>
 
-        <div class="card">
-            <div class="card-body d-flex  align-items-center">
-                <img src="images/icon-check.svg" alt="check" class="border border-dark rounded-circle">
-                <span class="ml-3">Buy a neccessary things for kitchen</span>
-                <img src="images/icon-cross.svg" alt="cross" class="ml-auto">
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="card-body d-flex  align-items-center">
-                <img src="images/icon-check.svg" alt="check" class="border border-dark rounded-circle">
-                <span class="ml-3">Buy a neccessary things for kitchen</span>
-                <img src="images/icon-cross.svg" alt="cross" class="ml-auto">
-            </div>
-        </div>
     </div>
     <div>
         <div class="card">
@@ -63,6 +58,13 @@ include_once "header.php";
     </div>
     <p class="text-center mb-4">Drag and drop to reorder list</p>
 </footer>
+
+<script>
+    //prevent form resubmission after page refreshing 
+    if (window.history.replaceState) {
+        window.history.replaceState(null, null, window.location.href);
+    }
+</script>
 
 </body>
 
