@@ -16,7 +16,6 @@ a:hover {
 
 header {
   background-image: url("images/bg-mobile-light.jpg");
-
   background-position: top;
   background-repeat: no-repeat;
   background-size: cover;
@@ -28,4 +27,18 @@ header {
 
 .theme-icon {
   font-size: 1.5rem;
+}
+
+/* MAIN */
+
+main {
+  position: relative;
+  bottom: 2em;
+  z-index: 1;
+}
+
+/* checkbox */
+.check-box {
+  font-size: 1.2rem;
+  color: rgb(189, 186, 186);
 }
