@@ -15,6 +15,8 @@
         window.history.replaceState(null, null, window.location.href);
     }
 
+    //toggle checkbox after click
+
     const checkBoxes = document.querySelectorAll(".check");
 
     checkBoxes.forEach(checkBox => {
@@ -22,6 +24,7 @@
             if (checkBox.classList.contains("fa-circle")) {
                 checkBox.classList.remove("far", "fa-circle")
                 checkBox.classList.add("fas", "fa-check-circle")
+
             } else if (checkBox.classList.contains("fa-check-circle")) {
                 checkBox.classList.remove("fas", "fa-check-circle")
                 checkBox.classList.add("far", "fa-circle")

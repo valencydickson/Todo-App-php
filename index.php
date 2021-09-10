@@ -18,15 +18,22 @@
         <?php
         include_once("database.php");
         $data = new Database();
-        foreach ($data->showData() as $todo) {
-            echo  "<div class='card'>
-            <div class='card-body d-flex  align-items-center'>
-                <span class='check-box'><i class='far fa-circle check'></i></span>
-                <span class='ml-3'>$todo[title]</span>
-                <img src='images/icon-cross.svg' alt='cross' class='ml-auto'>
+        $todos = $data->showData(); ?>
+
+
+        <?php foreach ($todos as $todo) { ?>
+            <div class="card">
+                <div class="card-body d-flex  align-items-center">
+                    <i class="far fa-circle check"></i>
+                    <span class="ml-3"><?php echo $todo['title'] ?></span>
+                    <form class="ml-auto" method="post" action="delete.php">
+                        <input type="hidden" name="id" value="<?php echo $todo['id'] ?>">
+                        <button type="submit" class="btn"><i class="fas fa-trash-alt"></i></button>
+                    </form>
+
+                </div>
             </div>
-        </div>";
-        } ?>
+        <?php } ?>
 
     </div>
     <div>
@@ -37,6 +44,7 @@
             </div>
         </div>
     </div>
+
 
 
 </main>

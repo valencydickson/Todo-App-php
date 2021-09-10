@@ -21,7 +21,7 @@ class Database
     function showData()
     {
         $pdo = new PDO("mysql:host=$this->servername;dbname=$this->dbname", $this->username);
-        $sql = $pdo->prepare("SELECT title FROM todos ");
+        $sql = $pdo->prepare("SELECT * FROM todos");
         $sql->execute();
         return $sql->fetchAll(PDO::FETCH_ASSOC); //fetch data from database
     }

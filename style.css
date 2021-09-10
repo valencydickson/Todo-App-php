@@ -1,3 +1,12 @@
+:root {
+  /* Colors */
+
+  /* Primary */
+
+  --BrightBlue: hsl(220, 98%, 61%);
+  --CheckBackground: hsl(280, 87%, 65%);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -38,7 +47,11 @@ main {
 }
 
 /* checkbox */
-.check-box {
+.check {
   font-size: 1.2rem;
   color: rgb(189, 186, 186);
+}
+
+.fa-check-circle {
+  color: var(--CheckBackground);
 }
