@@ -18,6 +18,7 @@
     //toggle checkbox after click
 
     const checkBoxes = document.querySelectorAll(".check");
+    const todos = document.querySelectorAll(".todo")
 
     checkBoxes.forEach(checkBox => {
         checkBox.addEventListener("click", () => {

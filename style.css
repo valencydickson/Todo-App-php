@@ -46,10 +46,19 @@ main {
   z-index: 1;
 }
 
+.todo {
+  margin-left: 0.5em;
+}
+
+.completed {
+  text-decoration: line-through;
+}
+
 /* checkbox */
 .check {
   font-size: 1.2rem;
   color: rgb(189, 186, 186);
+  cursor: pointer;
 }
 
 .fa-check-circle {

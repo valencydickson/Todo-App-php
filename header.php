@@ -29,7 +29,18 @@
 
 
     <!-- CSS -->
-    <link rel="stylesheet" href="style.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="style.css?v=<?php echo time(); ?> "> <!-- force css file to reload -->
 </head>
 
 <body>
+    <header class="container-fluid py-5">
+        <div class="d-flex justify-content-between align-items-center pb-4">
+            <a href="" class="heading text-light">TODO</a>
+            <img src="images/icon-moon.svg" alt="sun" class="theme-icon text-light">
+        </div>
+        <form method="post" action="create.php">
+            <div class='form-group'>
+                <input type='text' class='form-control' name="todo" placeholder='Create a new todo'>
+            </div>
+        </form>
+    </header>
