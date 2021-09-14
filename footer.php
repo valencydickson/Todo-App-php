@@ -1,9 +1,18 @@
 <footer class="container-fluid mt-5">
     <div class="card mb-5">
         <div class="card-body d-flex justify-content-around  align-items-center">
-            <p>All</p>
-            <p>Active</p>
-            <p>Completed</p>
+            <form method="post" action="showTodos.php">
+                <input type="hidden" name="all" value="all">
+                <button type="submit" class="btn">All</button>
+            </form>
+            <form method="post" action="showTodos.php">
+                <input type="hidden" name="active" value="active">
+                <button type="submit" class="btn">Active</button>
+            </form>
+            <form method="post" action="showTodos.php">
+                <input type="hidden" name="completed" value="completed">
+                <button type="submit" class="btn">Completed</button>
+            </form>
         </div>
     </div>
     <p class="text-center mb-4">Drag and drop to reorder list</p>
