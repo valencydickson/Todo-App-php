@@ -14,14 +14,13 @@
                 <div class="card-body d-flex  align-items-center">
                     <form method="post" action="completed.php">
                         <input type="hidden" name="id" value="<?php echo $todo['id'] ?>">
-                        <button type="submit" class="btn"> <i class="far fa-circle check"></i></button>
+                        <button type="submit" class="btn"> <i class="<?php echo ($todo['completed'] == 1) ? 'fas fa-check-circle' : 'far fa-circle check' ?>"></i></button>
                     </form>
                     <span class="<?php echo ($todo['completed'] == 1) ? 'todo completed' : 'todo' ?>"><?php echo $todo['title'] ?></span>
                     <form class="ml-auto" method="post" action="delete.php">
                         <input type="hidden" name="id" value="<?php echo $todo['id'] ?>">
                         <button type="submit" class="btn"><i class="fas fa-trash-alt"></i></button>
                     </form>
-
                 </div>
             </div>
         <?php } ?>
