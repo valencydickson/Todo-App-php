@@ -17,8 +17,8 @@ if ($active) {
 
 if ($todos) { ?>
     <?php foreach ($todos as $todo) { ?>
-        <div class="card">
-            <div class="card-body d-flex  align-items-center">
+        <div class="card ">
+            <div class="card-body todo-card d-flex  align-items-center">
                 <form method="post" action="completed.php">
                     <input type="hidden" name="id" value="<?php echo $todo['id'] ?>">
                     <button type="submit" class="btn"> <i class="<?php echo ($todo['completed'] == 1) ? 'fas fa-check-circle' : 'far fa-circle check' ?>"></i></button>

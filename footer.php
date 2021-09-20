@@ -1,6 +1,6 @@
-<footer class="container-fluid mt-5">
-    <div class="card mb-5">
-        <div class="card-body d-flex justify-content-around  align-items-center">
+<footer class="container-fluid">
+    <div class="card mb-5 ">
+        <div class="card-body status-card d-flex justify-content-around  align-items-center">
             <form method="post" action="showTodos.php">
                 <input type="hidden" name="all" value="all">
                 <button type="submit" class="btn">All</button>

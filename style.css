@@ -21,6 +21,10 @@ a:hover {
   text-decoration: none;
 }
 
+p {
+  margin: 0 !important;
+}
+
 /* HEADER */
 
 header {
@@ -46,8 +50,17 @@ main {
   z-index: 1;
 }
 
+.todo-card {
+  padding: 0.5em !important;
+}
+
 .todo {
   margin-left: 0.5em;
+}
+
+.todo-footer,
+.status-card {
+  padding: 0.5em 1em !important;
 }
 
 .completed {
@@ -63,4 +76,19 @@ main {
 
 .fa-check-circle {
   color: var(--CheckBackground);
+}
+
+@media screen and (min-width: 760px) {
+  header {
+    background-image: url("images/bg-desktop-light.jpg");
+  }
+
+  main,
+  .hero,
+  footer {
+    max-width: 600px;
+  }
+  .hero {
+    margin: auto;
+  }
 }

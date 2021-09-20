@@ -2,19 +2,16 @@
 
 
 <main class="container-fluid">
-
     <div class="todos">
         <!-- Display all todos -->
         <?php
         require_once("showTodos.php");
         ?>
 
-
-
     </div>
     <div>
         <div class="card">
-            <div class="card-body d-flex justify-content-between  align-items-center">
+            <div class="card-body todo-footer d-flex justify-content-between  align-items-center">
                 <p><span><?php echo  count($todos) ?></span> items left</p>
                 <form class="ml-auto" method="post" action="delete.php">
                     <input type="hidden" name="clear" value="clear">
