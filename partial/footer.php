@@ -1,3 +1,5 @@
+<?php require_once("./variables.php") ?>
+
 <script>
     //prevent form resubmission after page refreshing 
     if (window.history.replaceState) {
@@ -23,20 +25,57 @@
     })
 
 
-    //Drag and Drop functionality
-    function allowDrop(ev) {
-        ev.preventDefault();
-    }
+    //Dark and Light themes
 
-    function drag(ev) {
-        ev.dataTransfer.setData("text", ev.target.id);
-    }
 
-    function drop(ev) {
-        ev.preventDefault();
-        var data = ev.dataTransfer.getData("text");
-        ev.target.appendChild(document.getElementById(data));
-    }
+
+
+    const modeIcon = document.querySelector(".theme-icon")
+    const header = document.querySelector(".header")
+    const addTodo = document.querySelector(".add-todo")
+    const body = document.querySelector(".body")
+    const todosCard = document.querySelectorAll(".todo-card")
+    const todosTitle = document.querySelectorAll(".todo")
+    const deleteBtn = document.querySelectorAll(".delete-btn")
+
+
+
+    modeIcon.addEventListener("click", () => {
+        if (modeIcon.getAttribute("src") == "images/icon-moon.svg") {
+            modeIcon.setAttribute("src", "images/icon-sun.svg")
+            header.style.backgroundImage = "url(images/bg-mobile-dark.jpg)"
+            addTodo.style.backgroundColor = "<?php echo $veryDarkDesaturatedBlue ?>"
+            body.style.backgroundColor = "<?php echo $veryDarkBlue ?>"
+            todosCard.forEach(todoCard => {
+                todoCard.style.backgroundColor = "<?php echo $veryDarkDesaturatedBlue ?>"
+            })
+            todosTitle.forEach(todoTitle => {
+                todoTitle.style.color = "<?php echo $lightGrayishBlue  ?>"
+            })
+            deleteBtn.forEach(btn => {
+                btn.style.color = "<?php echo $lightGrayishBlue2  ?>"
+            })
+
+
+        } else if (modeIcon.getAttribute("src") == "images/icon-sun.svg") {
+            modeIcon.setAttribute("src", "images/icon-moon.svg")
+            header.style.backgroundImage = "url(images/bg-mobile-light.jpg)"
+            addTodo.style.backgroundColor = "<?php echo $veryLightGray ?>"
+            body.style.backgroundColor = "<?php echo $veryLightGrayishBlue ?>"
+            todosCard.forEach(todoCard => {
+                todoCard.style.backgroundColor = "<?php echo $veryLightGray  ?>"
+            })
+            todosTitle.forEach(todoTitle => {
+                todoTitle.style.color = "<?php echo $darkGrayishBlue  ?>"
+            })
+
+            deleteBtn.forEach(btn => {
+                btn.style.color = "<?php echo $darkGrayishBlue  ?>"
+            })
+
+        }
+
+    })
 </script>
 
 </body>

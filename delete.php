@@ -3,8 +3,8 @@
 require_once("database.php");
 
 
-$id = $_POST["id"] ?? "";
-$deleteCompleted = $_POST["clear"] ?? "";
+$id = $_POST["id"] ?? ""; //individual todo
+$deleteCompleted = $_POST["clear"] ?? ""; //all completed todos
 
 if ($id) {
     $sql = $pdo->prepare("DELETE FROM todos WHERE id = :id ");
