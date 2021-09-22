@@ -58,11 +58,6 @@ main {
   margin-left: 0.5em;
 }
 
-.todo-footer,
-.status-card {
-  padding: 0.5em 1em !important;
-}
-
 .completed {
   text-decoration: line-through;
 }
@@ -84,8 +79,7 @@ main {
   }
 
   main,
-  .hero,
-  footer {
+  .hero {
     max-width: 600px;
   }
   .hero {
