@@ -26,6 +26,11 @@ p {
   margin: 0 !important;
 }
 
+input,
+.card {
+  border: none !important;
+}
+
 /* HEADER */
 
 header {
@@ -37,6 +42,10 @@ header {
 
 .heading {
   font-size: 2rem;
+}
+
+.hero {
+  padding: 0 !important;
 }
 
 .theme-icon {
@@ -81,9 +90,10 @@ main {
 
   main,
   .hero {
-    max-width: 600px;
+    max-width: 550px;
   }
-  .hero {
-    margin: auto;
+
+  main {
+    padding: 0 !important;
   }
 }

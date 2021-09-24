@@ -1,4 +1,4 @@
-<?php require_once("partial/header.php") ?>
+<?php require_once __DIR__ . "/partial/header.php" ?>
 
 <body class="body">
     <header class="container-fluid py-5 header">
@@ -7,7 +7,7 @@
                 <a href="" class="heading text-light">TODO</a>
                 <img src="images/icon-moon.svg" alt="sun" class="theme-icon text-light">
             </div>
-            <form method="post" action="create.php">
+            <form method="post" action="controllers/create.php">
                 <div class='form-group '>
                     <input type='text' class='form-control add-todo' name="todo" placeholder='Create a new todo'>
                 </div>
@@ -22,17 +22,17 @@
             <!-- Display all todos -->
             <?php
 
-            require_once("todos.php");
+            require_once __DIR__ . "/controllers/todos.php";
 
             foreach ($todos as $todo) { ?>
-                <div class="card ">
+                <div class="card my-1">
                     <div class="card-body todo-card d-flex  align-items-center">
-                        <form method="post" action="completed.php">
+                        <form method="post" action="controllers/completed.php">
                             <input type="hidden" name="id" value="<?php echo $todo['id'] ?>">
                             <button type="submit" class="btn"> <i class="<?php echo ($todo['completed'] == 1) ? 'fas fa-check-circle' : 'far fa-circle check' ?>"></i></button>
                         </form>
                         <span class="<?php echo ($todo['completed'] == 1) ? 'todo completed' : 'todo' ?>"><?php echo $todo['title'] ?></span>
-                        <form class="ml-auto" method="post" action="delete.php">
+                        <form class="ml-auto" method="post" action="controllers/delete.php">
                             <input type="hidden" name="id" value="<?php echo $todo['id'] ?>">
                             <button type="submit" class="btn "><i class="fas fa-trash-alt delete-btn"></i></button>
                         </form>
@@ -42,11 +42,11 @@
 
 
         </div>
-        <div class="mt-4">
+        <div class="mt-4 ">
             <div class="card">
                 <div class="card-body todo-card d-flex justify-content-between  align-items-center">
                     <p class="todo"><span><?php echo  count($todos) ?></span> items left</p>
-                    <form class="ml-auto" method="post" action="delete.php">
+                    <form class="ml-auto" method="post" action="controllers/delete.php">
                         <input type="hidden" name="clear" value="clear">
                         <button type="submit" class="btn delete-btn">Clear Completed</button>
                     </form>
@@ -58,4 +58,4 @@
 
     </main>
 
-    <?php require_once("partial/footer.php") ?>
+    <?php require_once __DIR__ . "/partial/footer.php" ?>

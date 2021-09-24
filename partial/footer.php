@@ -1,4 +1,4 @@
-<?php require_once("./variables.php") ?>
+<?php require_once __DIR__ . "/../views/variables.php" ?>
 
 <script>
     //prevent form resubmission after page refreshing 
@@ -27,9 +27,6 @@
 
     //Dark and Light themes
 
-
-
-
     const modeIcon = document.querySelector(".theme-icon")
     const header = document.querySelector(".header")
     const addTodo = document.querySelector(".add-todo")
@@ -37,6 +34,11 @@
     const todosCard = document.querySelectorAll(".todo-card")
     const todosTitle = document.querySelectorAll(".todo")
     const deleteBtn = document.querySelectorAll(".delete-btn")
+
+    //set theme
+    if (localStorage.getItem("theme") == null) {
+        localStorage.setItem("theme", "light")
+    }
 
 
 
@@ -56,6 +58,12 @@
                 btn.style.color = "<?php echo $lightGrayishBlue2  ?>"
             })
 
+            //change background with screen width
+
+            if ($(window).width() > 760) {
+                header.style.backgroundImage = "url(images/bg-desktop-dark.jpg)";
+            }
+
 
         } else if (modeIcon.getAttribute("src") == "images/icon-sun.svg") {
             modeIcon.setAttribute("src", "images/icon-moon.svg")
@@ -73,6 +81,9 @@
                 btn.style.color = "<?php echo $darkGrayishBlue  ?>"
             })
 
+            if ($(window).width() > 760) {
+                header.style.backgroundImage = "url(images/bg-desktop-light.jpg)";
+            }
         }
 
     })
