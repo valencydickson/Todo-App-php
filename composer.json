@@ -1,0 +1,10 @@
+{
+    "name": "samsung/public",
+    "authors": [
+        {
+            "name": "valencydickson",
+            "email": "dickson.valency@gmail.com"
+        }
+    ],
+    "require": {}
+}

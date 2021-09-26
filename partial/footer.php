@@ -35,12 +35,6 @@
     const todosTitle = document.querySelectorAll(".todo")
     const deleteBtn = document.querySelectorAll(".delete-btn")
 
-    //set theme
-    if (localStorage.getItem("theme") == null) {
-        localStorage.setItem("theme", "light")
-    }
-
-
 
     modeIcon.addEventListener("click", () => {
         if (modeIcon.getAttribute("src") == "images/icon-moon.svg") {
