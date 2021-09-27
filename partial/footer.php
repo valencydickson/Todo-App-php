@@ -34,52 +34,65 @@
     const todosCard = document.querySelectorAll(".todo-card")
     const todosTitle = document.querySelectorAll(".todo")
     const deleteBtn = document.querySelectorAll(".delete-btn")
+    const theme = window.localStorage.getItem("theme")
+    var toggle = true
 
+
+    // Dark mode function
+    function darkMode() {
+        modeIcon.setAttribute("src", "images/icon-sun.svg")
+        header.style.backgroundImage = "url(images/bg-mobile-dark.jpg)"
+        addTodo.style.backgroundColor = "<?php echo $veryDarkDesaturatedBlue ?>"
+        body.style.backgroundColor = "<?php echo $veryDarkBlue ?>"
+        todosCard.forEach(todoCard => {
+            todoCard.style.backgroundColor = "<?php echo $veryDarkDesaturatedBlue ?>"
+        })
+        todosTitle.forEach(todoTitle => {
+            todoTitle.style.color = "<?php echo $lightGrayishBlue  ?>"
+        })
+        deleteBtn.forEach(btn => {
+            btn.style.color = "<?php echo $lightGrayishBlue2  ?>"
+        })
+
+        //change background with screen width
+
+        if ($(window).width() > 760) {
+            header.style.backgroundImage = "url(images/bg-desktop-dark.jpg)";
+        }
+    }
+
+    // Light mode function
+    function lightMode() {
+        modeIcon.setAttribute("src", "images/icon-moon.svg")
+        header.style.backgroundImage = "url(images/bg-mobile-light.jpg)"
+        addTodo.style.backgroundColor = "<?php echo $veryLightGray ?>"
+        body.style.backgroundColor = "<?php echo $veryLightGrayishBlue ?>"
+        todosCard.forEach(todoCard => {
+            todoCard.style.backgroundColor = "<?php echo $veryLightGray  ?>"
+        })
+        todosTitle.forEach(todoTitle => {
+            todoTitle.style.color = "<?php echo $darkGrayishBlue  ?>"
+        })
+
+        deleteBtn.forEach(btn => {
+            btn.style.color = "<?php echo $darkGrayishBlue  ?>"
+        })
+
+        if ($(window).width() > 760) {
+            header.style.backgroundImage = "url(images/bg-desktop-light.jpg)";
+        }
+    }
+
+    if (theme === "dark") {
+        darkMode()
+    }
 
     modeIcon.addEventListener("click", () => {
-        if (modeIcon.getAttribute("src") == "images/icon-moon.svg") {
-            modeIcon.setAttribute("src", "images/icon-sun.svg")
-            header.style.backgroundImage = "url(images/bg-mobile-dark.jpg)"
-            addTodo.style.backgroundColor = "<?php echo $veryDarkDesaturatedBlue ?>"
-            body.style.backgroundColor = "<?php echo $veryDarkBlue ?>"
-            todosCard.forEach(todoCard => {
-                todoCard.style.backgroundColor = "<?php echo $veryDarkDesaturatedBlue ?>"
-            })
-            todosTitle.forEach(todoTitle => {
-                todoTitle.style.color = "<?php echo $lightGrayishBlue  ?>"
-            })
-            deleteBtn.forEach(btn => {
-                btn.style.color = "<?php echo $lightGrayishBlue2  ?>"
-            })
-
-            //change background with screen width
-
-            if ($(window).width() > 760) {
-                header.style.backgroundImage = "url(images/bg-desktop-dark.jpg)";
-            }
-
-
-        } else if (modeIcon.getAttribute("src") == "images/icon-sun.svg") {
-            modeIcon.setAttribute("src", "images/icon-moon.svg")
-            header.style.backgroundImage = "url(images/bg-mobile-light.jpg)"
-            addTodo.style.backgroundColor = "<?php echo $veryLightGray ?>"
-            body.style.backgroundColor = "<?php echo $veryLightGrayishBlue ?>"
-            todosCard.forEach(todoCard => {
-                todoCard.style.backgroundColor = "<?php echo $veryLightGray  ?>"
-            })
-            todosTitle.forEach(todoTitle => {
-                todoTitle.style.color = "<?php echo $darkGrayishBlue  ?>"
-            })
-
-            deleteBtn.forEach(btn => {
-                btn.style.color = "<?php echo $darkGrayishBlue  ?>"
-            })
-
-            if ($(window).width() > 760) {
-                header.style.backgroundImage = "url(images/bg-desktop-light.jpg)";
-            }
-        }
-
+        toggle ? darkMode() : lightMode() //toggle functions onclick
+        toggle = !toggle
+        if (theme === "dark") {
+            window.localStorage.setItem("theme", "light");
+        } else window.localStorage.setItem("theme", "dark");
     })
 </script>
 
