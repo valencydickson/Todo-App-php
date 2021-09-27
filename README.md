@@ -1,20 +1,27 @@
-![Calculator App](https://github.com/valencydickson/calculator-app/blob/main/images/Calculator_icon.svg.png)
+## Todo App with PHP
 
-## Calculator App
-
-It is a Calculator App for making simple calculations.
+It is a simple Todo App.
 
 Users should be able to:
 
-- Perform mathematical operations like addition, subtraction, multiplication, and division
-- Adjust the color theme based on their preference
+- Add new todos to the list
+- Mark todos as complete
+- Delete todos from the list
+- Clear all completed todos
+- Toggle light and dark mode
 
-Visit app: [Calculator App](https://calculator-app-jet-zeta.vercel.app/)
+Visit app: [Todo App](https://todo-valency.herokuapp.com/)
 
 **Tools Used**
 
 This project built with:
 
+*Front End*
 - Semantic HTML5 markup
 - CSS custom properties
-- [Vanilla JavaScript](https://www.javascript.com/)
+- Bootstrap
+- JavaScript
+
+*Back End*
+- PHP
+- MySQL
