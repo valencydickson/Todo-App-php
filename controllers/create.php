@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $title) {
     $sql->bindParam(":title", $title);
     $sql->bindParam("completed", $completed);
     $sql->execute();
-    header("location:../index.php");
+    header("location:../");
 } else {
-    header("location:../index.php");
+    header("location:../");
 }

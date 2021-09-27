@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todo App</title>
 
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/51416ae4aa.js" crossorigin="anonymous"></script>
 
@@ -26,6 +28,8 @@
 
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
 
 
     <!-- CSS -->
