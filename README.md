@@ -2,7 +2,7 @@
 
 It is a simple Todo App.
 
-Users should be able to:
+User can be able to:
 
 - Add new todos to the list
 - Mark todos as complete
