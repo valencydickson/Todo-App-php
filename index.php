@@ -7,9 +7,9 @@
                 <a href="" class="heading text-light">TODO</a>
                 <img src="images/icon-moon.svg" alt="sun" class="theme-icon text-light">
             </div>
-            <form method="post" action="controllers/create.php">
+            <form method="post" action="<?php echo htmlspecialchars('controllers/create.php') ?>">
                 <div class='form-group '>
-                    <input type='text' class='form-control add-todo' name="todo" placeholder='Create a new todo'>
+                    <input type='text' class='form-control add-todo' name="title" placeholder='Create a new todo'>
                 </div>
             </form>
         </div>
@@ -27,12 +27,12 @@
             foreach ($todos as $todo) { ?>
                 <div class="card my-1">
                     <div class="card-body todo-card d-flex  align-items-center">
-                        <form method="post" action="controllers/completed.php">
+                        <form method="post" action="<?php echo htmlspecialchars('controllers/completed.php') ?>">
                             <input type="hidden" name="id" value="<?php echo $todo['id'] ?>">
                             <button type="submit" class="btn"> <i class="<?php echo ($todo['completed'] == 1) ? 'fas fa-check-circle' : 'far fa-circle check' ?>"></i></button>
                         </form>
                         <span class="<?php echo ($todo['completed'] == 1) ? 'todo completed' : 'todo' ?>"><?php echo $todo['title'] ?></span>
-                        <form class="ml-auto" method="post" action="controllers/delete.php">
+                        <form class="ml-auto" method="post" action="<?php echo htmlspecialchars('controllers/delete.php') ?>">
                             <input type="hidden" name="id" value="<?php echo $todo['id'] ?>">
                             <button type="submit" class="btn "><i class="fas fa-trash-alt delete-btn"></i></button>
                         </form>
@@ -46,7 +46,7 @@
             <div class="card">
                 <div class="card-body todo-card d-flex justify-content-between  align-items-center">
                     <p class="todo"><span><?php echo  count($todos) ?></span> items left</p>
-                    <form class="ml-auto" method="post" action="controllers/delete.php">
+                    <form class="ml-auto" method="post" action="<?php echo htmlspecialchars('controllers/delete.php') ?>">
                         <input type="hidden" name="clear" value="clear">
                         <button type="submit" class="btn delete-btn">Clear Completed</button>
                     </form>
